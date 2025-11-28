@@ -32,10 +32,28 @@ void keyPressed() {
   if (key == 'w'){
     dog.moveUp = true;
   }
+  if (key == 's'){
+    dog.moveDown = true;
+  }
+  if (key == 'a'){
+    dog.moveLeft = true;
+  }
+  if (key == 'd'){
+    dog.moveRight = true;
+  }
 }
 
 void keyReleased(){
   if(key == 'w') {
     dog.moveUp = false;
+  }
+  if (key == 's'){
+    dog.moveDown = false;
+  }
+  if (key == 'a'){
+    dog.moveLeft = false;
+  }
+  if (key == 'd'){
+    dog.moveRight = false;
   }
 }

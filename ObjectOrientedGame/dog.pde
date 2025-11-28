@@ -6,22 +6,31 @@ boolean moveLeft = false;
 boolean moveDown = false;
 PVector position;
 PVector velocity;
+PVector acceleration;
+PVector speed;
+float decay = 0.82;
 
 Dog(float x, float y) {
   position = new PVector(x, y);
   velocity = new PVector(0, 0);
-  
+  acceleration = new PVector(0, 0);
+  speed = new PVector(0, 0);
 }
 
 void moveDog() {
   position.add(velocity);
+  velocity.x = velocity.x*decay;
+  velocity.y = velocity.y*decay;
+  velocity.add(acceleration);
+  acceleration = new PVector(speed.x, speed.y);
   
   if(moveUp == true){
-    velocity.y = -6.7;
+    speed.y = -1;
   } else {
-    velocity.y = 0;
+    speed.y = 0;
   }
-  
+
+ 
     
 }
 
@@ -29,7 +38,6 @@ void display() {
   fill(255, 0, 0);
   ellipse(position.x, position.y, 50, 50); 
 }
-
 
 
 
