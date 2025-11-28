@@ -1,12 +1,16 @@
+Dog dog;
+
 
 void setup () {
   size(400, 400);
-  
-  
+   dog = new Dog(width/2, height/2);
 }
 
 void draw () {
   background(110);
+  
+  dog.moveDog();
+  dog.display();
   
    //pedestrian crossing
   int x = 60;
@@ -19,14 +23,19 @@ void draw () {
     rect (x, y, 280, 30);
     y = y + spacing;
   }  
-  
-  dog(); //the dog
- 
+   
 }
 
-void dog() {
-  fill(255, 0, 0);
-  ellipse(width/2, height/2, 50, 50); 
-  
-    
+
+
+void keyPressed() {
+  if (key == 'w'){
+    dog.moveUp = true;
+  }
+}
+
+void keyReleased(){
+  if(key == 'w') {
+    dog.moveUp = false;
+  }
 }
