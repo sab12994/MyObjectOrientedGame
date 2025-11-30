@@ -9,10 +9,7 @@ void setup () {
 void draw () {
   background(110);
   
-  dog.moveDog();
-  dog.display();
-  
-   //pedestrian crossing
+  //pedestrian crossing
   int x = 60;
   int y = 0;
   int endRoad = 400;
@@ -23,11 +20,17 @@ void draw () {
     rect (x, y, 280, 30);
     y = y + spacing;
   }  
+  
+  dog.moveDog(); //initializing dog's movement
+  dog.display(); //drawing the dog
+  
+   
    
 }
 
 
 
+//adding WASD controls for dog's movement 
 void keyPressed() {
   if (key == 'w'){
     dog.moveUp = true;
@@ -43,6 +46,7 @@ void keyPressed() {
   }
 }
 
+//making movement stop when keys are released
 void keyReleased(){
   if(key == 'w') {
     dog.moveUp = false;

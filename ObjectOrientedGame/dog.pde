@@ -5,33 +5,27 @@ boolean moveRight = false;
 boolean moveLeft = false;
 boolean moveDown = false;
 PVector position;
-PVector velocity;
-PVector acceleration;
-PVector speed;
-float decay = 0.82;
+float speed = 4;
 
 Dog(float x, float y) {
-  position = new PVector(x, y);
-  velocity = new PVector(0, 0);
-  acceleration = new PVector(0, 0);
-  speed = new PVector(0, 0);
+  position = new PVector(x, y);  //initializing pvector
 }
 
+//writing dog's movement 
 void moveDog() {
-  position.add(velocity);
-  velocity.x = velocity.x*decay;
-  velocity.y = velocity.y*decay;
-  velocity.add(acceleration);
-  acceleration = new PVector(speed.x, speed.y);
-  
   if(moveUp == true){
-    speed.y = -1;
-  } else {
-    speed.y = 0;
+    position.y = position.y - speed;
   }
-
- 
-    
+  if(moveDown == true){
+    position.y = position.y + speed;
+  }
+  if(moveLeft == true){
+    position.x = position.x - speed;
+  }
+  if(moveRight == true){
+    position.x = position.x + speed;
+  }
+// reference: Bugs-Be-Gone-Code > keyboard_controls    
 }
 
 void display() {
