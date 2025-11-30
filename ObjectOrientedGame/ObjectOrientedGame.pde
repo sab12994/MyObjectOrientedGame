@@ -1,11 +1,14 @@
 Dog dog;
-Ped pedestrian;
+PedRightToLeft[] pedestrian = new PedRightToLeft[5];
 
 
 void setup () {
   size(400, 400);
    dog = new Dog(width/2, height/2);
-   pedestrian = new Ped();
+   
+   for (int i = 0; i < pedestrian.length; i++) {
+   pedestrian[i] = new PedRightToLeft();
+   }
 }
 
 void draw () {
@@ -26,7 +29,10 @@ void draw () {
   
   dog.moveDog(); //initializing dog's movement
   dog.display(); //drawing the dog
-  pedestrian.display();
+  
+  for (int i = 0; i < pedestrian.length; i++) {
+     pedestrian[i].display();
+   }
   
    
 }
