@@ -1,5 +1,8 @@
 Dog dog;
-PedRightToLeft[] pedestrian = new PedRightToLeft[5];
+PedLeftToRight[] pedestrian = new PedLeftToRight[4];
+PedRightToLeft[] pedestrian1 = new PedRightToLeft[3];
+PedBottomToTop[] pedestrian2 = new PedBottomToTop[2];
+PedTopToBottom[] pedestrian3 = new PedTopToBottom[2];
 
 
 void setup () {
@@ -7,7 +10,19 @@ void setup () {
    dog = new Dog(width/2, height/2);
    
    for (int i = 0; i < pedestrian.length; i++) {
-   pedestrian[i] = new PedRightToLeft();
+   pedestrian[i] = new PedLeftToRight();
+   }
+   
+   for (int i = 0; i < pedestrian1.length; i++) {
+   pedestrian1[i] = new PedRightToLeft();
+   }
+   
+   for (int i = 0; i < pedestrian2.length; i++) {
+   pedestrian2[i] = new PedBottomToTop();
+   }
+   
+   for (int i = 0; i < pedestrian3.length; i++) {
+   pedestrian3[i] = new PedTopToBottom();
    }
 }
 
@@ -32,6 +47,18 @@ void draw () {
   
   for (int i = 0; i < pedestrian.length; i++) {
      pedestrian[i].display();
+   }
+   
+   for (int i = 0; i < pedestrian1.length; i++) {
+     pedestrian1[i].display();
+   }
+   
+   for (int i = 0; i < pedestrian2.length; i++) {
+     pedestrian2[i].display();
+   }
+   
+    for (int i = 0; i < pedestrian3.length; i++) {
+     pedestrian3[i].display();
    }
   
    

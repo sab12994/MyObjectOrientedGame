@@ -8,21 +8,11 @@ class PedRightToLeft {
     float X = width - (map(frameCount%width, 0, 400, rmin, rmax));
     
     if (X > 500){
-    r = random(10, 300);
+    r = random(0, 300);
   }
     rect(X, r, 50, 50);
     
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
