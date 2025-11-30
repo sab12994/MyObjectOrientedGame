@@ -1,14 +1,18 @@
+Dog dog;
+Ped pedestrian;
+
 
 void setup () {
   size(400, 400);
-  
-  
+   dog = new Dog(width/2, height/2);
+   pedestrian = new Ped();
 }
 
 void draw () {
+  
   background(110);
   
-   //pedestrian crossing
+  //pedestrian crossing
   int x = 60;
   int y = 0;
   int endRoad = 400;
@@ -20,13 +24,43 @@ void draw () {
     y = y + spacing;
   }  
   
-  dog(); //the dog
- 
+  dog.moveDog(); //initializing dog's movement
+  dog.display(); //drawing the dog
+  pedestrian.display();
+  
+   
 }
 
-void dog() {
-  fill(255, 0, 0);
-  ellipse(width/2, height/2, 50, 50); 
-  
-    
+
+
+//adding WASD controls for dog's movement 
+void keyPressed() {
+  if (key == 'w'){
+    dog.moveUp = true;
+  }
+  if (key == 's'){
+    dog.moveDown = true;
+  }
+  if (key == 'a'){
+    dog.moveLeft = true;
+  }
+  if (key == 'd'){
+    dog.moveRight = true;
+  }
+}
+
+//making movement stop when keys are released
+void keyReleased(){
+  if(key == 'w') {
+    dog.moveUp = false;
+  }
+  if (key == 's'){
+    dog.moveDown = false;
+  }
+  if (key == 'a'){
+    dog.moveLeft = false;
+  }
+  if (key == 'd'){
+    dog.moveRight = false;
+  }
 }
