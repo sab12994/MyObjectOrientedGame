@@ -5,6 +5,7 @@ PedRightToLeft[] pedestrian1 = new PedRightToLeft[3];
 PedBottomToTop[] pedestrian2 = new PedBottomToTop[2];
 PedTopToBottom[] pedestrian3 = new PedTopToBottom[2];
 FastPed fastPed;
+boolean gameOver; 
 
 void setup () {
   size(400, 400);
@@ -34,10 +35,6 @@ void draw () {
   background(110);
 
 
-  //if (d < 40) {
-  //  background(255, 0, 0);
-  //}
-
   //pedestrian crossing
   int x = 60;
   int y = 0;
@@ -65,7 +62,7 @@ void draw () {
     pedestrian[i].display();
     float d = dist(dog.position.x, dog.position.y, pedestrian[i].X, pedestrian[i].r);
     if (d < 40) {
-      background(255, 0, 0);
+      gameOver = true;
     } 
       
   }
@@ -74,7 +71,7 @@ void draw () {
     pedestrian1[i].display();
      float d = dist(dog.position.x, dog.position.y, pedestrian1[i].X, pedestrian1[i].r);
     if (d < 40) {
-      background(255, 0, 0);
+      gameOver = true;
     } 
   }
 
@@ -82,7 +79,7 @@ void draw () {
     pedestrian2[i].display();
      float d = dist(dog.position.x, dog.position.y, pedestrian2[i].r, pedestrian2[i].Y);
     if (d < 40) {
-      background(255, 0, 0);
+      gameOver = true;
     } 
   }
 
@@ -90,8 +87,12 @@ void draw () {
     pedestrian3[i].display();
      float d = dist(dog.position.x, dog.position.y, pedestrian3[i].r, pedestrian3[i].Y);
     if (d < 40) {
-      background(255, 0, 0);
+      gameOver = true;
     } 
+  }
+  
+   if (gameOver == true) {
+    background(255, 0, 0);
   }
   
 }
@@ -112,6 +113,10 @@ void keyPressed() {
   if (key == 'd') {
     dog.moveRight = true;
   }
+  if (key == ' ') {
+    gameOver = false;
+  }
+  
 }
 
 //making movement stop when keys are released
