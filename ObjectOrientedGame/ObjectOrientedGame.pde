@@ -1,19 +1,16 @@
 Dog dog;
-<<<<<<< HEAD
 
-=======
 PedLeftToRight[] pedestrian = new PedLeftToRight[4];
 PedRightToLeft[] pedestrian1 = new PedRightToLeft[3];
 PedBottomToTop[] pedestrian2 = new PedBottomToTop[2];
 PedTopToBottom[] pedestrian3 = new PedTopToBottom[2];
 FastPed fastPed;
->>>>>>> main
 
 void setup () {
   size(400, 400);
    dog = new Dog(width/2, height/2);
-<<<<<<< HEAD
-=======
+
+
    fastPed = new FastPed(0, height/2);
    
    for (int i = 0; i < pedestrian.length; i++) {
@@ -31,7 +28,6 @@ void setup () {
    for (int i = 0; i < pedestrian3.length; i++) {
    pedestrian3[i] = new PedTopToBottom();
    }
->>>>>>> main
 }
 
 void draw () {
@@ -51,12 +47,10 @@ void draw () {
   }  
   
   dog.moveDog(); //initializing dog's movement
-<<<<<<< HEAD
   dog.display(); //drawing the dog
   
    
    
-=======
   dog.display(); //drawaing the dog
   
   fastPed.move();
@@ -80,7 +74,6 @@ void draw () {
    }
   
    
->>>>>>> main
 }
 
 

@@ -1,9 +1,7 @@
 class Dog {
 
-<<<<<<< HEAD
+
 PImage dog;
-=======
->>>>>>> main
 boolean moveUp = false;
 boolean moveRight = false;
 boolean moveLeft = false;
@@ -13,11 +11,9 @@ float speed = 4;
 
 Dog(float x, float y) {
   position = new PVector(x, y);  //initializing pvector
-<<<<<<< HEAD
   imageMode(CENTER);
   dog = loadImage("Asset 1.png");
-=======
->>>>>>> main
+
 }
 
 //writing dog's movement 
@@ -38,16 +34,7 @@ void moveDog() {
 }
 
 void display() {
-<<<<<<< HEAD
   image(dog, position.x, position.y, 60, 70);
-=======
-  fill(255, 0, 0);
-  ellipse(position.x, position.y, 50, 50); 
->>>>>>> main
-}
-
-
-
-
+  }
 
 }
