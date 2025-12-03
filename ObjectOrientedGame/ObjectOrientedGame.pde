@@ -93,7 +93,7 @@ void draw () {
   
    if (gameOver == true) {
     background(255, 0, 0);
-  }
+  } 
   
 }
 
@@ -115,6 +115,7 @@ void keyPressed() {
   }
   if (key == ' ') {
     gameOver = false;
+    dog = new Dog(width/2, height/2);
   }
   
 }
