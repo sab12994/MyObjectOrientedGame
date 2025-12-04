@@ -13,8 +13,9 @@ void setup () {
   dog = new Dog(width/2, height/2);
 
 
-  fastPed = new FastPed(0, height/2);
+  fastPed = new FastPed(random(-50, 0), random(50, 350));
 
+//initializing everything!
   for (int i = 0; i < pedestrian.length; i++) {
     pedestrian[i] = new PedLeftToRight();
   }
@@ -53,17 +54,17 @@ void draw () {
 
 
 
-  dog.display(); //drawaing the dog
+  dog.display(); //drawing the dog
 
-  fastPed.move();
-  fastPed.display();
+  fastPed.move(); //initializing fast pedestrian's movement
+  fastPed.display(); //drawing fast pedestrian
 
 
   for (int i = 0; i < pedestrian.length; i++) {
-    pedestrian[i].display();
-    float d = dist(dog.position.x, dog.position.y, pedestrian[i].X, pedestrian[i].r);
+    pedestrian[i].display(); //drawing all pedestrians
+    float d = dist(dog.position.x, dog.position.y, pedestrian[i].X, pedestrian[i].r); //adding distance variable for each pedestrian in order to detect collision between them and the dog
     if (d < 40) {
-      gameOver = true;
+      gameOver = true; //if the distance between the dog and pedestrians is smaller than 40, the game state switches to game over 
     } 
       
   }
@@ -92,6 +93,12 @@ void draw () {
     } 
   }
   
+  float d = dist(dog.position.x, dog.position.y, fastPed.position.x, fastPed.position.y);
+  if (d < 40) {
+      gameOver = true;
+    }
+  
+    //game over screen
    if (gameOver == true) {
     gameOverScreen = loadImage("game over screen.jpg");
     imageMode(CENTER);
@@ -116,10 +123,10 @@ void keyPressed() {
   if (key == 'd') {
     dog.moveRight = true;
   }
-  if (key == ' ') {
-    gameOver = false;
+  if (key == ' ') {  
+    gameOver = false;  //making all elements start from the beginning, giving the starting positions
     dog = new Dog(width/2, height/2);
-    fastPed = new FastPed(0, height/2);
+    fastPed = new FastPed(random(-50, 0), random(50, 350)); //made the lost child appear at different locations each time
 
   for (int i = 0; i < pedestrian.length; i++) {
     pedestrian[i] = new PedLeftToRight();
@@ -135,7 +142,7 @@ void keyPressed() {
 
   for (int i = 0; i < pedestrian3.length; i++) {
     pedestrian3[i] = new PedTopToBottom();
-  }
+    }
   }
   
 }

@@ -12,7 +12,7 @@ float speed = 4;
 Dog(float x, float y) {
   position = new PVector(x, y);  //initializing pvector
   imageMode(CENTER);
-  dog = loadImage("Asset 1.png");
+  dog = loadImage("Asset 1.png"); //the dog image
 
 }
 
@@ -34,7 +34,7 @@ void moveDog() {
 }
 
 void display() {
-  image(dog, position.x, position.y, 60, 70);
+  image(dog, position.x, position.y, 60, 70); //image's proportions
   }
 
 }
