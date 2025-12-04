@@ -6,6 +6,7 @@ PedBottomToTop[] pedestrian2 = new PedBottomToTop[2];
 PedTopToBottom[] pedestrian3 = new PedTopToBottom[2];
 FastPed fastPed;
 boolean gameOver; 
+PImage gameOverScreen;
 
 void setup () {
   size(400, 400);
@@ -92,7 +93,9 @@ void draw () {
   }
   
    if (gameOver == true) {
-    background(255, 0, 0);
+    gameOverScreen = loadImage("game over screen.jpg");
+    imageMode(CENTER);
+    image(gameOverScreen, width/2, height/2, 400, 400);
   } 
   
 }
@@ -116,6 +119,23 @@ void keyPressed() {
   if (key == ' ') {
     gameOver = false;
     dog = new Dog(width/2, height/2);
+    fastPed = new FastPed(0, height/2);
+
+  for (int i = 0; i < pedestrian.length; i++) {
+    pedestrian[i] = new PedLeftToRight();
+  }
+
+  for (int i = 0; i < pedestrian1.length; i++) {
+    pedestrian1[i] = new PedRightToLeft();
+  }
+
+  for (int i = 0; i < pedestrian2.length; i++) {
+    pedestrian2[i] = new PedBottomToTop();
+  }
+
+  for (int i = 0; i < pedestrian3.length; i++) {
+    pedestrian3[i] = new PedTopToBottom();
+  }
   }
   
 }

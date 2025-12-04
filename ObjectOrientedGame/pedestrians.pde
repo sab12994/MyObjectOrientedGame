@@ -1,5 +1,6 @@
 class PedBottomToTop {
   
+  PImage pedestrian = loadImage("pedestrian.png"); 
   float Y;
   float r;
   float rmin = random(-300, 0);
@@ -11,8 +12,8 @@ class PedBottomToTop {
     if (Y > 500){
     r = random(10, 390);
   }
-    fill(0, 0, 255);
-    rect(r, Y, 50, 50);
+    imageMode(CENTER);
+    image(pedestrian, r, Y, 100, 100);
     
   }
 }
@@ -20,6 +21,7 @@ class PedBottomToTop {
 
 class PedLeftToRight {
   
+  PImage pedestrian = loadImage("pedestrian.png"); 
   float X;
   float r;
   float rmin = random(-300, 0);
@@ -31,8 +33,8 @@ class PedLeftToRight {
     if (X > 500){
     r = random(10, 390);
   }
-    fill(0, 0, 255);  
-    rect(X, r, 50, 50);
+    imageMode(CENTER);
+    image(pedestrian, X, r, 100, 100);
     
   }
 }
@@ -40,6 +42,7 @@ class PedLeftToRight {
 
 class PedRightToLeft {
   
+  PImage pedestrian = loadImage("pedestrian.png"); 
   float X;
   float r;
   float rmin = random(-300, 0);
@@ -51,8 +54,8 @@ class PedRightToLeft {
     if (X > 500){
     r = random(0, 300);
   }
-    fill(0, 0, 255);
-    rect(X, r, 50, 50);
+    imageMode(CENTER);
+    image(pedestrian, X, r, 100, 100);
     
   }
 }
@@ -60,6 +63,7 @@ class PedRightToLeft {
 
 class PedTopToBottom {
   
+  PImage pedestrian = loadImage("pedestrian.png");
   float Y;
   float r;
   float rmin = random(-300, 0);
@@ -71,8 +75,8 @@ class PedTopToBottom {
     if (Y > 500){
     r = random(10, 390);
   }
-    fill(0, 0, 255);
-    rect(r, Y, 50, 50);
+    imageMode(CENTER);
+    image(pedestrian, r, Y, 100, 100);
     
   }  
 }
